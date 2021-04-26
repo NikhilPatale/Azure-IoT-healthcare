@@ -6,7 +6,7 @@ const request = require('request');
 const url = require('url'); 
 const { query } = require('express');
 
-mongoose.connect('mongodb+srv://asheshpathak:asheshpathak@vectorcluster.lnwgc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+
 
 
 const app = express()
