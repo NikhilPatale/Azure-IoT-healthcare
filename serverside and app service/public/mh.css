@@ -1,0 +1,39 @@
+body{
+    /* background-color: blueviolet; */
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+a:link, a:visited { /* or a[href] */
+    /* Enabled link styles */
+    color: inherit;
+  }
+.navbar
+{
+    background-color: #343434;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar .logo
+{
+    color: white;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.navbar .logo-1
+{
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.navbar li{
+    list-style: none;
+    display: inline;
+    margin: 20px;
+    color: white;
+}

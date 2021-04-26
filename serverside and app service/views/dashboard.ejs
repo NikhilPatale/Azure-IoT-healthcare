@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="dashboard.css">
+        <link href="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/dist/chart.min.js">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js" integrity="sha512-BqNYFBAzGfZDnIWSAEGZSD/QFKeVxms2dIBPfw11gZubWwKUjEgmFUtUls8vZ6xTRZN/jaXGHD/ZaxD9+fDo0A==" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <nav id="navbar" class="navbar">
+            <diV class="logo"><a style="text-decoration: none;" href="/">COGNISENSE</a></diV>
+            <div class="logo-1">USER HEALTH DASHBOARD</div>
+            <div>
+                <ul>
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+        </nav>
+        <div class="patient-nav">
+
+        </div>
+        
+
+        <diV class="dash-1">
+            <div class="dash-1-layer-1">
+                <div class="dash-1-layer-1-item-1">
+                    <div style=" margin : 0px 10px; height: 80px;">
+                        <p style="color: white; font-size: 25px; font-weight: 700; margin: 0px 10px; margin-top: 20px;">Subramanian, Laxman</p>
+                        <p style="color: white; margin: 0px 10px; font-weight: 500;">Associate, Human Resources, Teaneck, New Jersey, </p>
+                        <p style="color: white; margin: 0px 10px; font-weight: 500;">United States</p>  
+                    </div>
+                    
+                    
+                </div>
+                <div class="dash-1-layer-1-item-2">
+                    <div style=" display: flex; flex-direction: column; justify-content: center; color: white; background-color: #1b1b1b; margin: 0px 10px; width: 500px; height: 120px;" >
+                        <h4 style="padding: 0px 5px;">You have selected:</h4>
+                        <!-- <h4><%query.diseases.forEach%></h4> -->
+                        <div style="display: flex; flex-wrap: wrap; height: auto;">
+                            <% query.diseases.forEach(function(element) { %>
+                                <div style="border-radius: 50px; color: black; width: auto; height: 25px; margin: 5px 5px; padding: 3px 8px; background-color: greenyellow; font-size: 12px;">
+                                     <%=element%>
+                                 </div>
+                                 
+                               <% }) %>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="dash-1-layer-2">
+                <div class="dash-1-layer-2-item-2">
+                    <div class="line-1">
+                        <div class="vitals">
+                            <p class="vital-tag">Heartbeat</p>
+                            <div style="display: flex;flex-direction: row; justify-content: center;align-items: baseline;">
+                                <div class="vital-info-child-1"><p id="hbeat-vital">...</p></div>
+                                <div class="vital-info-child-2">Beats/PM</div>
+                            </div>
+                            <p class="vital-tag-2">IDEAL 60-100 BPM</p>
+                            
+                        </div>
+                        <div class="vitals">
+                            <p class="vital-tag">Temperature</p>
+                            
+                            <div class="vital-info">
+                                <div class="vital-info-child-1"><p id="temp-vital">...</p></div>
+                                <div class="vital-info-child-2">Deg/CEL</div>
+                            </div>
+                            <p class="vital-tag-2">IDEAL 36.1-37.2</p>
+                        </div>
+                        <div class="vitals">
+                            <p class="vital-tag">SPO2</p>
+                            
+                            <div style="display: flex;flex-direction: row; justify-content: center;align-items: baseline;">
+                                <div class="vital-info-child-1"><p id="spo-vital">...</p></div>
+                                <div class="vital-info-child-2">%</div>
+                            </div>
+                            <p class="vital-tag-2">IDEAL 96-99%</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="dash-1-layer-2-item-1">
+                    <div style="background-color: #1b1b1b;width: 90%; height: 100px;">
+                        <h3 style=" margin: 5px 10px; color: white;">Primary Diagnosis</h3>
+                        <p style="width:300px ; color: white; margin: 5px 10px;">Symptoms of Seasonal Flu or COVID-19</p>
+                        <div style="display: flex; flex-direction: row; align-items: center; margin:5px 10px;">
+                            <div style="color: white; margin-right: 10px; font-weight: 800;">ALERT LEVEL: </div>
+                            <div style= "background-color: tomato; width: 20px; height: 20px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </diV>
+
+        
+        <div class="line-2">
+            <div class="vitals-graph">
+                <canvas id="myChart1" width="600" height="400"></canvas>
+            </div>
+            <div class="vitals-graph">
+                <canvas id="myChart" width="600" height="400"></canvas>
+            </div>
+            
+        </div>
+
+        <div class="line-3">
+            <p style="font-size: 40px; font-weight: 800; margin: 10px 0px;">Book an appointment</p>
+            <p style="font-size: 20px; font-weight: 800; margin: 10px 0px;">Available Doctors</p>
+            <div class="ui cards">
+                <div class="card">
+                  <div class="content">
+                    <img class="right floated mini ui image" src="/images/avatar/large/elliot.jpg">
+                    <div id="doctor-name1" class="header">
+                      Dr. Ramesh Vyas
+                    </div>
+                    <div id="doctor-desig1" class="meta">
+                      M.D D.M Cardiology
+                    </div>
+                    <div id="doctor-time1" class="description">
+                      Available between 19:00 - 20:00 at 3rd Floor
+                    </div>
+                  </div>
+                  <div class="extra content">
+                    <div class="ui two buttons">
+                      <div id="doc-1" class="ui green button">Book an appointment</div>
+                      <!-- <div class="ui basic red button">Decline</div> -->
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="card">
+                  <div class="content">
+                    <img class="right floated mini ui image" src="/public/icons/Sample_User_Icon.png">
+                    <div id="doctor-name2" class="header">
+                      Dr. R Ganesan
+                    </div>
+                    <div id="doctor-desig2" class="meta">
+                      M.D, M.B.B.S Gen Physician
+                    </div>
+                    <div id="doctor-time2" class="description">
+                        Available between 11:00 - 16:00 at 2nd Floor
+                    </div>
+                  </div>
+                  <div class="extra content">
+                    <div class="ui two buttons">
+                      <div id="doc-2" class="ui green button">Book an appointment</div>
+                      <!-- <div class="ui basic red button">Decline</div> -->
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card" style="display: flex; justify-content: space-around;">
+                    <div class="content">
+                      <img class="right floated mini ui image" src="/images/avatar/large/jenny.jpg">
+                      <div id="doctor-name3" class="header">
+                        Dr. Nalini Iyyer
+                      </div>
+                      <div id="doctor-desig3" class="meta">
+                        OB/GYN
+                      </div>
+                      <div id="doctor-time3" class="description">
+                        Available between 11:00 - 16:00 at 9th Floor
+                      </div>
+                    </div>
+                    <div class="extra content">
+                      <div class="ui two buttons">
+                        <div id="doc-3" class="ui green button">Book an appointment</div>
+                        <!-- <div class="ui basic red button">Decline</div> -->
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="content">
+                      <img class="right floated mini ui image" src="/images/avatar/large/jenny.jpg">
+                      <div id="doctor-name4" class="header">
+                        Dr. Vishal Varma
+                      </div>
+                      <div id="doctor-desig4" class="meta">
+                        M.S. Ortho
+                      </div>
+                      <div id="doctor-time4" class="description">
+                        Available between 13:00 - 18:00 at 11th Floor
+                      </div>
+                    </div>
+                    <div class="extra content">
+                      <div class="ui two buttons">
+                        <div id="doc-4" class="ui green button">Book an appointment</div>
+                        <!-- <div class="ui basic red button">Decline</div> -->
+                      </div>
+                    </div>
+                  </div>
+
+              </div>
+        </div>
+        
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            <p style="font-size: 30px; font-weight: 800;">Your appointment details</p>
+            <p id="doc-name"></p>
+            <p id="doc-desig"></p>
+            <p id="doc-time"></p>
+            <div class="ui green button"><a href="/">Confirm</a></div>
+            </div>
+  
+        </div>
+        
+        <script>
+
+
+            var hbeat = document.getElementById('hbeat-vital')
+            var temp = document.getElementById('temp-vital')
+            var spo2 = document.getElementById('spo-vital')
+
+            var doc1 = document.getElementById('doc-1')
+            var doc2 = document.getElementById('doc-2')
+            var doc3 = document.getElementById('doc-3')
+            var doc4 = document.getElementById('doc-4')
+
+
+            var doctorName1 = document.getElementById('doctor-name1')
+            var doctorDesig1 = document.getElementById('doctor-desig1')
+            var doctorTime1 = document.getElementById('doctor-time1')
+
+            var doctorName2 = document.getElementById('doctor-name2')
+            var doctorDesig2 = document.getElementById('doctor-desig2')
+            var doctorTime2 = document.getElementById('doctor-time2')
+
+            var doctorName3 = document.getElementById('doctor-name3')
+            var doctorDesig3 = document.getElementById('doctor-desig3')
+            var doctorTime3 = document.getElementById('doctor-time3')
+
+            var doctorName4 = document.getElementById('doctor-name4')
+            var doctorDesig4 = document.getElementById('doctor-desig4')
+            var doctorTime4 = document.getElementById('doctor-time4')
+
+            var docName = document.getElementById('doc-name')
+            var docDesig = document.getElementById('doc-desig')
+            var docTime = document.getElementById('doc-time')
+
+
+
+
+            var graphData = new Array()
+
+            var ctx_live = document.getElementById("myChart1");
+            var myChart1 = new Chart(ctx_live, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                data: [],
+                borderWidth: 1,
+                borderColor:'#00c0ef',
+                label: 'HEARTBEAT IN BPM',
+                fill:true
+                }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                display: true,
+                text: "Chart.js - Dynamically Update Chart Via Ajax Requests",
+                },
+                legend: {
+                display: false
+                },
+                scales: {
+                yAxes: [{
+                    ticks: {
+                    beginAtZero: true
+                    }
+                }]
+                }
+            }
+            });
+
+            var postId = 1;
+
+            
+
+            var ctx = document.getElementById("myChart");
+            var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                data: [],
+                borderWidth: 1,
+                borderColor:'#00c0ef',
+                label: 'TEMP IN DEGREE CELCIUS',
+                fill:true
+                }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                display: true,
+                text: "Chart.js - Dynamically Update Chart Via Ajax Requests",
+                },
+                legend: {
+                display: true
+                },
+                scales: {
+                yAxes: [{
+                    ticks: {
+                    beginAtZero: true
+                    }
+                }]
+                }
+            }
+            });
+
+            var postId1 = 1;
+
+
+
+
+
+
+
+
+function livestreamData()
+            {
+                
+                var url = "/api/get/livedata/"
+                setInterval(function(){
+                    //console.log("function hit")
+                    var xhr = new XMLHttpRequest()
+                    xhr.onreadystatechange = function()
+                    {
+                        if(xhr.readyState === 4)
+                        {
+
+                            var response = JSON.parse(xhr.responseText)
+                            //console.log(response)
+                            hbeat.innerHTML = response.heartbeat
+                            temp.innerHTML = Math.round(response.temperature*10)/10
+                            spo2.innerHTML = 96 + Math.round(Math.random()*10)/10
+                            //graphData.push(response.heartbeat)
+                            //console.log(graphData)
+                            myChart1.data.labels.push("HBEAT " + postId++);
+                            myChart1.data.datasets[0].data.push(response.heartbeat);
+                            myChart.data.labels.push("TEMP " + postId1++);
+                            myChart.data.datasets[0].data.push(response.temperature);
+                            myChart1.update();
+                            myChart.update();
+
+                        }
+                        
+                    }
+                    //xhr.open("GET",'/api/get/livedata/',true)
+                    xhr.open("GET",url,true)
+                        xhr.send();
+
+                        
+                },3000)
+                
+                
+            }
+
+
+            // Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+// var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+doc1.onclick = function() {
+  modal.style.display = "block";
+  docName.innerHTML = doctorName1.innerHTML
+  docDesig.innerHTML = doctorDesig1.innerHTML
+  docTime.innerHTML = doctorTime1.innerHTML
+}
+
+doc2.onclick = function() {
+  modal.style.display = "block";
+  docName.innerHTML = doctorName2.innerHTML
+  docDesig.innerHTML = doctorDesig2.innerHTML
+  docTime.innerHTML = doctorTime2.innerHTML
+}
+
+doc3.onclick = function() {
+  modal.style.display = "block";
+  docName.innerHTML = doctorName3.innerHTML
+  docDesig.innerHTML = doctorDesig3.innerHTML
+  docTime.innerHTML = doctorTime3.innerHTML
+}
+
+doc4.onclick = function() {
+  modal.style.display = "block";
+  docName.innerHTML = doctorName4.innerHTML
+  docDesig.innerHTML = doctorDesig4.innerHTML
+  docTime.innerHTML = doctorTime4.innerHTML
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+
+document.addEventListener("DOMContentLoaded",function(){
+                livestreamData()
+            })
+
+        </script>
+    </body>
+</html>

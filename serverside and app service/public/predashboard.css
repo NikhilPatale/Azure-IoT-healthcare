@@ -1,0 +1,154 @@
+body{
+    /* background-color: blueviolet; */
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+a:link, a:visited { /* or a[href] */
+  /* Enabled link styles */
+  color: inherit;
+}
+
+.navbar
+{
+    background-color: #343434;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar .logo
+{
+    color: white;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+
+
+.navbar li{
+    list-style: none;
+    display: inline;
+    margin: 20px;
+    color: white;
+}
+
+
+#first-div
+{
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#first-div button
+{
+  display: flex;
+  align-items: center;
+  text-align: left;
+  width: 60%;
+  margin: 5px;
+  height: 60px;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#second-div form
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-input-div
+{
+  display: flex;
+  flex-direction: row;
+  font-size: large;
+  margin: 5px 5px;
+  width: 400px;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-input-div input
+{
+  
+  margin: 0px 5px;
+}
+
+.form-input-div label
+{
+  font-weight: bold;
+}
+
+.form-parent-div
+{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-child-div
+{
+  font-size: large;
+  margin: 5px 5px;
+  width: 300px;
+}
+
+.form-child-button-div
+{
+  display: flex;
+  justify-content: center;
+  margin: 20px 5px;
+}
+
+form button
+{
+  width: 200px;
+}
+
+
+
+
+/*MODAL CODE*/
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }

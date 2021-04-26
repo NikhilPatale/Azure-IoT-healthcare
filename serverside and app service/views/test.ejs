@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>Live Stream:</h1>
+        <h1 id="livestream"></h1>
+        
+        <script>
+            console.log("this works")
+            var livStr = document.getElementById("livestream")
+            function livestreamData()
+            {
+                
+                //var url = "/api/get/livedata/"
+                setInterval(function(){
+                    //console.log("function hit")
+                    var xhr = new XMLHttpRequest()
+                    xhr.onreadystatechange = function()
+                    {
+                        if(xhr.readyState === 4)
+                        {
+                            var response = JSON.parse(xhr.responseText)
+                            console.log(response.bpi.USD.rate)
+                            livStr.innerHTML = response.bpi.USD.rate
+                        }
+                        
+                    }
+                    //xhr.open("GET",'/api/get/livedata/',true)
+                    xhr.open("GET",'http://api.coindesk.com/v1/bpi/currentprice.json',true)
+                        xhr.send();
+
+                        
+                },1000)
+                
+            }
+
+            document.addEventListener("DOMContentLoaded",function(){
+                livestreamData()
+            })
+        </script>
+    </body>
+</html>

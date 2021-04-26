@@ -1,0 +1,77 @@
+body{
+    /* background-color: blueviolet; */
+    font-family: 'Montserrat', sans-serif;
+}
+
+a:link, a:visited { /* or a[href] */
+    /* Enabled link styles */
+    color: inherit;
+  }
+
+.navbar
+{
+    background-color: #343434;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar .logo
+{
+    color: white;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.navbar li{
+    list-style: none;
+    display: inline;
+    margin: 20px;
+    color: white;
+}
+
+.parent-carousel
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+.parent-carousel .carousel-text{
+    width: 30%;
+}
+.parent-carousel .carousel
+{   
+    width: 40%;
+    height: 400px;
+    background-image: url('https://image.freepik.com/free-vector/group-people-working-together_52683-28615.jpg');
+    background-position:fill;
+}
+
+#carousel-header
+{
+    font-size: 40px;
+    font-weight: 700;
+    
+}
+
+#carousel-para
+{
+    border: none;
+    font-size: 20px;
+}
+
+#get-started
+{
+    border: none;
+    background-color: #3F00FF;
+    width: 150px;
+    height:50px;
+    font-size: 15px;
+    font-weight: 900;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+}

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="predashboard.css">
+    </head>
+    <body>
+        <nav id="navbar" class="navbar">
+            <diV class="logo"><a style="text-decoration: none;" href="/">COGNISENSE</a></diV>
+            <div>
+                <ul>
+                    <li>About</li>
+                    <li>Services</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+        </nav>
+
+        
+        <div class="ui container">
+            <div class="ui placeholder segment">
+                <div class="ui icon header">
+                  <i class="stethoscope icon"></i>
+                  Please keep your palm over the device to capture your health vitals
+                </div>
+                <div class="inline">
+                  <button id="myBtn" class="ui primary button">
+                    <i class="user icon"></i>
+                    Start Reading
+                  </button>
+                  <!-- <a href="#" class="ui button">
+                    <i class="cloud download icon"></i>  
+                    Load Health Profile</a> -->
+                </div>
+              </div>
+              <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+
+                    <span class="close">&times;</span>
+                    <div style="display: none;" id="zero-div">
+                        
+                            
+                            <h1>Please select the Symptoms</h1>
+                            <form method="POST" action="/api/mentalhealth/dashboard">
+                                <div class="form-input-div">
+                                </div>
+
+                                    <div class="form-parent-div">   
+
+                                        <div class="form-child-div">
+                                            <input type="checkbox"  name="dcs01" value="Headache" class="ui checkbox">
+                                            <label for="vehicle1">Stress</label>
+                                        </div>
+                                        
+                                        <div class="form-child-div">
+                                            <input type="checkbox" name="Nausea" value="Nausea" class="ui checkbox">
+                                            <label for="vehicle2">Anxiety</label>
+                                        </div>
+                                        
+                                        <div class="form-child-div">
+                                            <input type="checkbox" name="Cold" value="Cold" class="ui checkbox">
+                                            <label for="vehicle3">Depression</label>
+                                        </div>
+                                        
+                                        <div class="form-child-div">
+                                            <input type="checkbox" name="runnyNose" value="Runny Nose" class="ui checkbox">
+                                            <label for="vehicle3">ADHD</label>
+                                        </div>
+                                        <div class="form-child-div">
+                                            <input type="checkbox" name="runnyNose" value="Runny Nose" class="ui checkbox">
+                                            <label for="vehicle3">OCD</label>
+                                        </div>
+                                        
+                                       
+                                        
+                                       
+                                    </div>
+                                    <div class="form-child-button-div">
+                                
+                                        <button type="submit" class="ui blue button">Submit</button>
+                                    </div>
+                                
+                            </form>
+
+                          
+                    </div>
+                    <div id="first-div">
+                        <h1>Please select one of the options</h1>
+                        <!-- <button id="go-back-0" class="ui blue button">Go Back</button> -->
+                        <button id="btn-report-symp" class="ui button">
+                            Report physical health related issues
+                            <i class="arrow right icon"></i>
+                        <button id="btn-mental-htl" class="ui button">
+                            Report mental health related issues
+                            <i class="arrow right icon"></i>
+                        </button>
+                        <button id="btn-know-more" class="ui button">
+                            Know more about this platform
+                            <i class="arrow right icon"></i>
+                        </button>
+                    </div>
+    
+                    <div style="display: none;" id="second-div" class="ui container">
+    
+                        <div class="form-child-button-div">
+                            <button id="go-back-1" class="ui button">Go Back</button>
+                        </div>
+                        <h1>Please select the Symptoms</h1>
+                        <form method="POST" action="/dashboard">
+                            <br>
+                            <div class="form-input-div">
+                                <label for="vehicle1">Employee ID </label>
+                                <input id="blind-emp-id" type="text" name="empID">
+                            </div>
+                            <div class="form-parent-div">   
+                                <div class="form-child-div">
+                                    <input type="checkbox" id="headache" name="dcs01" value="Headache" class="ui checkbox">
+                                    <label for="vehicle1">Headache</label>
+                                </div>
+                                
+                                <div class="form-child-div">
+                                    <input type="checkbox" id="nausea" name="Nausea" value="Nausea" class="ui checkbox">
+                                    <label for="vehicle2">Nausea</label>
+                                </div>
+                                
+                                <div class="form-child-div">
+                                    <input type="checkbox" id="cold" name="Cold" value="Cold" class="ui checkbox">
+                                    <label for="vehicle3">Cold</label>
+                                </div>
+                                
+                                <div class="form-child-div">
+                                    <input type="checkbox" id="runnyNose" name="runnyNose" value="Runny Nose" class="ui checkbox">
+                                    <label for="vehicle3">Runny Nose</label>
+                                </div>
+                                
+                                <div class="form-child-div">
+                                    <input type="checkbox" id="stomachAche" name="StomachAche" value="Stomach Ache" class="ui checkbox">
+                                    <label for="vehicle3">Stomach Ache</label>
+                                </div>
+                                
+                                <div class="form-child-div">
+                                    <input type="checkbox" id="fever" name="Fever" value="Fever" class="ui checkbox">
+                                    <label for="vehicle3">Fever</label>
+                                </div>
+                                
+                                <div class="form-child-div">
+                                    <input type="checkbox" id="bodyache" name="BodyAche" value="Body Ache" class="ui checkbox">
+                                    <label for="vehicle3">Bodyache</label>
+                                </div>
+                                
+                                <div class="form-child-div">
+                                    <input type="checkbox" id="chestpain" name="ChestPain" value="Chest Pain" class="ui checkbox">
+                                    <label for="vehicle3">Chest pain</label>
+                                </div>
+                                
+                                <div class="form-child-div">
+                                    <input type="checkbox" id="loosemotion" name="loosemotion" value="Loose Motion or Irritable Gut" class="ui checkbox">
+                                    <label for="vehicle3">Loose Motion or Irritable Gut</label>
+                                </div>
+                                
+                                <div class="form-child-div">
+                                    <input type="checkbox" id="rednessEye" name="rednessEye" value="Redness in Eyes or Conjuctivitis" class="ui checkbox">
+                                    <label for="vehicle3">Redness in Eyes or Conjuctivitis</label>
+                                </div>
+                                
+                                <div class="form-child-div">
+                                    <input type="checkbox" id="tonsils" name="tonsils" value="Swollen Tonsils or Throat Ache" class="ui checkbox">
+                                    <label for="vehicle3">Swollen Tonsils or Throat Ache</label>
+                                </div>
+                                
+                                <div class="form-child-div">
+                                    <input type="checkbox" id="bodyBruises" name="bodyBruises" value="Body Bruises or Inflammation in any part of the body" class="ui checkbox">
+                                    <label for="vehicle3">Body Bruises or Inflammation in any part of the body</label>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="form-child-button-div">
+                                
+                                <a href="/dashboard"><button type="submit" id="div-2-submit-btn" class="ui blue button">Submit</button></a>
+                            </div>
+                            
+                        </form>
+                        
+                        
+                    
+                        
+                    
+                    </div>
+                    <div style="display: none;" id="third-div">
+                        <button id="go-back-2" class="ui button">Go Back</button>
+                        <p>You have selected the following symptoms:</p>
+                        <p id="symp-selected"></p>
+                        <p>Please follow further steps to book an appointment with on-premise doctors</p>
+                        <div style="display: block;">
+                            <div class="doctor">
+                                <button id="doc-1">
+                                    <p class="doc-name">Dr. ABC</p>
+                                    <p class="doc-desig">ABC</p>
+                                    <p class="doc-loc">Available at ABC location</p>
+                                    <p class="doc-time">Timings : 09:00 AM</p>
+                                </button>
+                        
+                            </div>
+                            <div class="doctor">
+                                <button id="doc-2">
+                                    <p class="doc-name">Dr. PQR</p>
+                                    <p class="doc-desig">PQR</p>
+                                    <p class="doc-loc">Available at PQR location</p>
+                                    <p class="doc-time">Timings : 09:00 AM</p>
+                                </button>
+                        
+                            </div>
+                            <div class="doctor">
+                                <button id="doc-3">
+                                    <p class="doc-name">Dr. EFG</p>
+                                    <p class="doc-desig">EFG</p>
+                                    <p class="doc-loc">Available at EFG location</p>
+                                    <p class="doc-time">Timings : 09:00 AM</p>
+                                </button>
+                            </div>
+                            <div class="doctor">
+                                <button id="doc-4">
+                                    <p class="doc-name">Dr. HIJ</p>
+                                    <p class="doc-desig">HIJ</p>
+                                    <p class="doc-loc">Available at HIJ location</p>
+                                    <p class="doc-time">Timings : 09:00 AM</p>
+                                </button>
+                        
+                            </div> 
+                        </div>
+                                     <!-- <button class="ui blue button">Proceed</button> -->
+                    </div>
+                    <div style="display: none;" id="fourth-div">
+                        <P id="four-div-para">You have booked an appointment with : </P>
+                    </div>
+
+                </div>
+  
+            </div>
+            <!-- <h1>USER DASHBOARD</h1>
+            <p id="sample">Take our guided tour to book one-to-one session with on premise doctors and experts</p> -->
+            
+        </div>
+        
+        <script>
+            //var btn0 = document.getElementById("empIDBtn")
+            //var btn01 = document.getElementById("go-back-0")
+            var btn1 = document.getElementById("btn-report-symp")
+            var btn2 = document.getElementById("btn-mental-htl")
+            var btn3 = document.getElementById("btn-know-more")
+            var btn4 = document.getElementById("go-back-1")
+            //var btn5 = document.getElementById("div-2-submit-btn")
+            var btn6 = document.getElementById("go-back-2")
+
+            var doc1 = document.getElementById("doc-1")
+            var doc2 = document.getElementById("doc-2")
+            var doc3 = document.getElementById("doc-3")
+            var doc4 = document.getElementById("doc-4")
+
+            var zeroDiv = document.getElementById("zero-div")
+            var firstDiv = document.getElementById("first-div")
+            var secondDiv = document.getElementById("second-div")
+            var thirdDiv = document.getElementById("third-div")
+            var fourthDiv = document.getElementById("fourth-div")
+
+            var blindInput = document.getElementById("blind-emp-id")
+            var empID = document.getElementById("employee-id")
+                    
+            // btn0.onclick = function(){
+
+            //     blindInput.value = empID.value
+            //     zeroDiv.style.display = "none"
+            //     firstDiv.style.display = "block"
+            // }
+
+            // btn01.onclick = function(){
+            //     zeroDiv.style.display = "block"
+            //     firstDiv.style.display = "none"
+            // }
+
+            btn2.onclick = function(){
+                zeroDiv.style.display = "block"
+                firstDiv.style.display = "none"
+                secondDiv.style.display = "none"
+            }
+            
+            btn1.onclick = function(){
+                //alert("Hey!")
+                firstDiv.style.display = "none";
+                secondDiv.style.display = "block"
+            }
+
+            btn3.onclick = function(){}
+            btn4.onclick = function(){
+                firstDiv.style.display = "block"
+                secondDiv.style.display = "none"
+            }
+
+
+                    
+                    //Global
+                    var paramArray = new Array()
+                    var result = 0;
+                    var counter = 0;
+                    var thirdDivPara = document.getElementById('symp-selected')
+                    
+            // btn5.onclick = function(){
+
+            //         var headache = document.getElementById("headache").checked
+            //         var nausea = document.getElementById("nausea").checked
+            //         var cold = document.getElementById("cold").checked
+            //         var stomachAche = document.getElementById("stomachAche").checked
+            //         var fever = document.getElementById("fever").checked
+            //         var bodyAche = document.getElementById("bodyache").checked
+
+            //         var params = {
+            //             headache:headache,
+            //             nausea:nausea,
+            //             cold:cold,
+            //             stomachAche:stomachAche,
+            //             fever:fever,
+            //             bodyache:bodyAche
+            //         }
+
+                    
+
+            //         var allInputs = document.getElementsByTagName('input')
+            //         console.log(allInputs[0].value)
+
+            //         for(var x = 0; x<allInputs.length;x++)
+            //         {
+            //             if(allInputs[x].type=='checkbox')
+            //             {
+            //                 if(allInputs[x].checked == true)
+            //                 {
+            //                     paramArray[counter]= allInputs[x].value
+            //                     counter++;
+            //                 }
+                            
+            //             }
+            //         }
+
+            //         paramArray.forEach((element)=>{
+            //             console.log(element)
+            //         })
+
+            //         const url = "/api/twomenu/response"
+
+            //         var xmlhttp = new XMLHttpRequest();
+            //         xmlhttp.onreadystatechange = function(res)
+            //         {
+            //             if(xmlhttp.readyState === 4)
+            //             {
+            //                 // alert(xmlhttp.responseText)
+            //             }
+            //         }
+
+            //             xmlhttp.open("POST",url,true) //true means request sent is asynchronous i.e. we are waiting for the response
+            //             xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            //             xmlhttp.send(JSON.stringify(params));
+            //         //xmlhttp.send(params)
+
+            //         firstDiv.style.display = "none"
+            //         secondDiv.style.display = "none"
+            //         thirdDiv.style.display = "block"
+                
+            //         paramArray.forEach((element)=>{
+            //             thirdDivPara.innerHTML += element+" "
+            //         })
+            // }
+
+            btn6.onclick = function()
+            {
+                firstDiv.style.display = "none"
+                secondDiv.style.display = "block"
+                thirdDiv.style.display = "none"
+            }
+
+
+            var bookedApt = document.getElementById("four-div-para")
+            doc1.onclick = function(){
+                firstDiv.style.display = "none"
+                secondDiv.style.display = "none"
+                thirdDiv.style.display = "none"
+                fourthDiv.style.display = "block"
+                bookedApt.innerHTML = doc1.innerHTML
+            }
+            doc2.onclick = function(){
+                firstDiv.style.display = "none"
+                secondDiv.style.display = "none"
+                thirdDiv.style.display = "none"
+                fourthDiv.style.display = "block"
+                bookedApt.innerHTML = doc2.innerHTML
+            }
+            doc3.onclick = function(){
+                firstDiv.style.display = "none"
+                secondDiv.style.display = "none"
+                thirdDiv.style.display = "none"
+                fourthDiv.style.display = "block"
+                bookedApt.innerHTML = doc3.innerHTML
+            }
+            doc4.onclick = function(){
+                firstDiv.style.display = "none"
+                secondDiv.style.display = "none"
+                thirdDiv.style.display = "none"
+                fourthDiv.style.display = "block"
+                bookedApt.innerHTML = doc4.innerHTML
+            }
+
+
+        
+
+            //MODAL
+            var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+        
+        </script>
+    </body>
+</html>
