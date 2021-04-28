@@ -30,7 +30,7 @@ const String AzureIoTHubAuth="SharedAccessSignature sr=IoTTechnocrats.azure-devi
  
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 32 // OLED display height, in pixels
-#define OLED_RESET    -1 // Reset pin # (or -1 if sharing Arduino reset pin)
+#define OLED_RESET    -1 // Reset pin # 
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET); 
 
@@ -143,18 +143,6 @@ if(irValue > 7000)
      String PostData="{ \"DeviceId\":\"HR\",\"HR\":"+String(beatAvg)+",\"Temp\":"+String(temperature)+"}";
      Serial.println(PostData);
      RestPostData(AzureIoTHubURI,AzureIoTHubFingerPrint,AzureIoTHubAuth,PostData); 
-
-     HTTPClient http; 
-     http.begin("http://testapp-pwa.azurewebsites.net/api/arduino/request");     
-     http.addHeader("Content-Type", "application/x-www-form-urlencoded");         
-     sprintf(reqBody, "heartbeat=%d&temperature=%f",beatAvg,temperature);
-     
-   
-  int httpCode = http.POST(reqBody);   
-  String payload = http.getString();  
-  Serial.println(payload);
-  Serial.println(httpCode);
-  http.end();
   }
 
 }
